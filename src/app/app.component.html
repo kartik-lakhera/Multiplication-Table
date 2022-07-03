@@ -1,0 +1,13 @@
+<h1><b>{{headingName}}</b></h1>
+<form [formGroup]="loginUser">
+  <mat-form-field appearance="outline">
+    <input matInput placeholder="Number" formControlName="number" [(ngModel)]="valueForCal">
+   <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+  <div *ngIf="loginUser.get('number')?.invalid && loginUser.get('number')?.touched">
+    <span>
+      <b>Number is required for calculation*</b>
+    </span>
+  </div>
+</form>
+<button mat-button color="primary" (click)="funcForTable()">Click me!</button>
